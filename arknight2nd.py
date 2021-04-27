@@ -133,29 +133,16 @@ def push(content):
         wx.push(f"【明日方舟】庆典筹备计划每日任务\n{content}", "@all")
         print("已使用企业微信应用消息推送")
 
-    from datetime import datetime
-    #构造一个将来的时间
-    future = datetime.strptime('2021-05-18 03:59:00','%Y-%m-%d %H:%M:%S')
-    #当前时间
-    now = datetime.now()
-    #求时间差
-    delta = future - now
-    hour = delta.seconds/60/60
-    minute = (delta.seconds - hour*60*60)/60
-    seconds = delta.seconds - hour*60*60 - minute*60
-    print_now=now.strftime('%Y-%m-%d %H:%M:%S')
-    print("今天是：",print_now)
-    print("距离活动结束还剩下：%d天"%delta.days)
-    print(delta.days,hour, minute, seconds)
-    def cookie_str2dict(cookies_str: str):
-        cookies_dict = {}
-        if cookies_str != "":
-            for line in cookies_str.split(";"):
-                if line == "":
-                    break
-                key, value = line.strip().split("=", 1)
-                cookies_dict[key] = value
-        return cookies_dict
+   
+def cookie_str2dict(cookies_str: str):
+    cookies_dict = {}
+    if cookies_str != "":
+        for line in cookies_str.split(";"):
+            if line == "":
+                break
+            key, value = line.strip().split("=", 1)
+            cookies_dict[key] = value
+    return cookies_dict
 
 def main():
     users: str = os.environ.get('COOKIES', None)
