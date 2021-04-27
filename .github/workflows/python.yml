@@ -31,5 +31,6 @@ jobs:
           SCT_SCENDKEY: ${{ secrets.SCT_SCENDKEY }}
           EMAIL: ${{ secrets.EMAIL }}
           TELEGRAM: ${{ secrets.TELEGRAM }}
-          WX_TEMPLATE: ${{ secrets.WX_TEMPLATE }}
+          WX_TEMPLATE1: ${{ secrets.WX_TEMPLATE1 }}
+          WX_TEMPLATE2: ${{ secrets.WX_TEMPLATE2 }}
           WX_QY: ${{ secrets.WX_QY }}
