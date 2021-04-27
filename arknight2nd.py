@@ -114,12 +114,18 @@ def push(content):
     if telegram_str:
         telegram(telegram_str, content)
         print("已使用telegram推送")
-    wx_template: str = os.environ.get('WX_TEMPLATE', None)
-    if wx_template:
-        appID, appsecret, template_id, touser = wx_template.strip().split(",")
+    wx_template1: str = os.environ.get('WX_TEMPLATE1', None)
+    if wx_template1:
+        appID, appsecret, template_id, touser = wx_template1.strip().split(",")
         wx = template_push(appID, appsecret, template_id)
         wx.push(touser, f"【明日方舟】庆典筹备计划每日任务\n{content}")
-        print("已使用微信模板推送")
+        print("已使用微信模板1推送")
+    wx_template2: str = os.environ.get('WX_TEMPLATE2', None)
+    if wx_template2:
+        appID, appsecret, template_id, touser = wx_template2.strip().split(",")
+        wx = template_push(appID, appsecret, template_id)
+        wx.push(touser, f"【明日方舟】庆典筹备计划每日任务\n{content}")
+        print("已使用微信模板2推送")
     wx_qy: str = os.environ.get('WX_QY', None)
     if wx_qy:
         corpid, secret, agentid = wx_qy.strip().split(",")
