@@ -79,7 +79,7 @@ class activity:
         info = self.get_userinfo()
         share_str = "今日尚未分享活动页面" if info["share"] else "今日已分享活动页面"
         roll_str = f"今日已收集「调色奶油袋」{2-info['rollChance']}个"
-        result = f"uid为{info['uid']}的玩家活动参与情况：{share_str}，{roll_str}，目前拥有「美味值」：{info['remainCoin']}，助力收集「原料数」：{info['totalPoint']}"
+        result = f"uid为{info['uid']}的玩家活动参与情况：{share_str}，{roll_str}，目前拥有「美味值」：{info['remainCoin']}，助力收集「原料数」：{info['totalPoint']}, 活动将于5月18日结束，注意提前兑换。"
         print(result)
         return result
 
